@@ -8,12 +8,12 @@ const Activity = ({suggestion}) =>{
     return (
         
         <>
-        {console.log(suggestion)}       
  {suggestion.map(act =>{
            return (<div key={act.key}>
-        
+                { act.activity && <div>
                 <p> Your suggested activity is to: {act.activity} </p>
                 <p> You'll need {act.participants} {act.participants === 1? 'person': 'people'} for this activity</p>
+                </div>}
             </div>)
         })}
         </>

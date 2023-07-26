@@ -9,6 +9,7 @@ function App(props) {
     <div className="App">
       <h1>Stimuli</h1>
       <p>Let's find something new for you to do</p>
+      {props.isFetching && <p>Hold your horses</p>}
       <button onClick={props.getAction}>Get new activity</button>
       <div><Activity/></div>
     </div>
@@ -17,7 +18,8 @@ function App(props) {
 
 const mapStateToProps = state =>{
   return {
-    suggestion: state.suggestion
+    suggestion: state.suggestion,
+    isFetching: state.isFetching
   }
 }
 

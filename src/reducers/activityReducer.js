@@ -1,4 +1,5 @@
-import { GET_ACTION } from "../actions/activityAction"
+import { GET_ACTION, LOADING_ACTION } from "../actions/activityAction"
+
 const initialState = {
     suggestion: [{
         activity: "",
@@ -19,7 +20,11 @@ export const reducer = (state = initialState , action) => {
                 ...state,
                 suggestion: [ action.payload]
             }
-
+        case LOADING_ACTION:
+            return {
+                ...state,
+                isFetching: !state.isFetching
+            }
         default:
             return state
     }
